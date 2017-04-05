@@ -1,14 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 
 class ItemCard extends Component {
-  constructor (props) {
-    super (props)
-
-  }
   render () {
-    const { img, brandName, brandLogo, price, prime, aggregateRating, productName, keywords } = this.props.item
+    const { img, brandName, brandLogo, price, aggregateRating, productName } = this.props.item
     return (
-      <div className="item-card">
+      <div className='item-card'>
         <img src={img} />
         <h1>{productName}</h1>
         <h3>{brandName}</h3>
