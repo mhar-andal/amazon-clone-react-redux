@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Navbar, Grid, Row, Col, FormGroup, FormControl, Button } from 'react-bootstrap'
+import { Navbar, Grid, Row, Col, FormGroup, FormControl, Button, Glyphicon } from 'react-bootstrap'
 import { setSearchTerm } from './redux/actionCreators'
 import { connect } from 'react-redux'
 import categories from './temp'
@@ -42,6 +42,7 @@ class NavbarHead extends Component {
                     </FormGroup>
                     {' '}
                   </Navbar.Form>
+                  <Button className='button'><Glyphicon className='glyph' glyph='shopping-cart' /><span className='shopping-cart'>0</span></Button>
                 </Navbar.Collapse>
               </Navbar>
             </Col>
