@@ -3,14 +3,14 @@ import './ItemCard.css'
 
 class ItemCard extends Component {
   render () {
-    const { img, brandName, price, aggregateRating, productName } = this.props.item
+    const { brandName, price, aggregateRating, productName } = this.props.item
     return (
       <div className='item-card'>
-        <img className='image-card' src={img} />
+        <img className='image-card' src='http://hackathon-in-a-box.org/img/box.png' />
         <h1 className='product-name'>{productName}</h1>
-        <h3>{brandName}</h3>
-        <h3>{price}</h3>
-        <h3>{aggregateRating}</h3>
+        <h3 className='brand-name'>{brandName}</h3>
+        <h3 className='price'>${price}</h3>
+        <h3 className='rating'>{aggregateRating}</h3>
       </div>
     )
   }

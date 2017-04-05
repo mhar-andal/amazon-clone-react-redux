@@ -1,6 +1,7 @@
 .content {
+  margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   width: 85%;
-  margin-left: 14%;
+  margin-left: 20%;
 }
