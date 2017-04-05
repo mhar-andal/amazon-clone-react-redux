@@ -1,0 +1,11 @@
+.item-card {
+  width: 300px;
+  padding: 100px;
+}
+.image-card {
+  width: 90%;
+}
+
+.product-name {
+  font-size: 20px;
+}
