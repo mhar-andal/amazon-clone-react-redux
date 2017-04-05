@@ -1,7 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
+import { Row, Col } from 'react-bootstrap'
 import './Sidebar.css'
 
 class Sidebar extends Component {
+  constructor (props) {
+    super(props)
+
+    this.handleFilterChange = this.handleFilterChange.bind(this)
+    this.state = {
+      filter: ''
+    }
+  }
+  handleFilterChange (event) {
+    // this.props.dispatch(event.target.value)
+    this.setState({ filter: event.target.value })
+  }
   render () {
     return (
       <div className='sidebar'>
@@ -10,18 +24,25 @@ class Sidebar extends Component {
             Refine Search
           </div>
           <div className='filter-section'>
-            <div className='inner-wrapper'>
-              <ul>
-                <li>
-                  <div className='rating-slider'>
-                    <h4 className='slide-header'>Rating</h4>
-                    <span>Adjust Rating</span>
-                    <div className='col-sm-12'>
-                      <div className='slider' />
-                    </div>
+            <div className='container-fluid'>
+              <Row className='inner-wrapper'>
+                <Col className='Ratings' sm={12} md={12}>
+                  <div role='subheading' className='slide-header'>
+                    <strong>Minimum Rating: </strong>
+                    <span>{this.state.filter}</span>
                   </div>
-                </li>
-              </ul>
+                </Col>
+              </Row>
+              <Row className='slide-wrapper'>
+                <input
+                  min='0'
+                  max='5'
+                  onChange={this.handleFilterChange}
+                  value={this.state.filter}
+                  className='col-md-12'
+                  type='range'
+                />
+              </Row>
             </div>
           </div>
           <div className='filter-section'>
@@ -34,5 +55,17 @@ class Sidebar extends Component {
     )
   }
 }
+const { func, string } = PropTypes
 
-export default Sidebar
+Sidebar.propTypes = {
+  dispatch: func,
+  filter: string
+}
+
+const mapStateToProps = (state) => {
+  return {
+    filter: state.filter
+  }
+}
+
+export default connect(mapStateToProps)(Sidebar)
