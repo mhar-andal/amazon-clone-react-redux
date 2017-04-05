@@ -1,33 +1,31 @@
 import React, { Component, PropTypes } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import { setRatingMin } from './redux/actionCreators'
 
 class RangeFilter extends Component {
   constructor (props) {
     super(props)
-    this.handleFilterChange = this.handleFilterChange.bind(this)
-    this.state = {
-      filter: ''
-    }
+
+    this.handleRatingMinChange = this.handleRatingMinChange.bind(this)
   }
-  handleFilterChange (event) {
-    // this.props.dispatch(event.target.value)
-    this.setState({ filter: event.target.value })
+  handleRatingMinChange (event) {
+    this.props.dispatch(setRatingMin(parseInt(event.target.value)))
   }
   render () {
     return (
       <div className='filter-section'>
         <div className='container-fluid'>
           <Row className='slide-wrapper'>
-            <Col sm='2'>
-              ({this.state.filter})
+            <Col sm={2}>
+              ({this.props.ratingMin})
             </Col>
-            <Col sm='10'>
+            <Col sm={10}>
               <input
                 min='0'
                 max='5'
-                onChange={this.handleFilterChange}
-                value={this.state.filter}
+                onChange={this.handleRatingMinChange}
+                value={this.props.ratingMin}
                 className='col-md-12'
                 type='range'
               />
@@ -38,16 +36,16 @@ class RangeFilter extends Component {
     )
   }
 }
-const { func, string } = PropTypes
+const { func, number } = PropTypes
 
 RangeFilter.propTypes = {
   dispatch: func,
-  filter: string
+  ratingMin: number
 }
 
 const mapStateToProps = (state) => {
   return {
-    filter: state.filter
+    ratingMin: state.ratingMin
   }
 }
 

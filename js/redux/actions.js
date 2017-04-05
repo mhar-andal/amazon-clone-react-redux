@@ -1,1 +1,2 @@
 export const SET_SEARCH_TERM = 'SET_SEARCH_TERM'
+export const SET_RATING_MIN = 'SET_RATING_MIN'
