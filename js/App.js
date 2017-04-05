@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
-import NavbarHead from './Navbar'
 import { render } from 'react-dom'
+import { BrowserRouter, Match } from 'react-router'
+import { Provider } from 'react-redux'
+import store from './redux/store'
+import Landing from './Landing'
 
 export default class App extends Component {
   render () {
     return (
-      <div className='app'>
-        <NavbarHead />
-      </div>
+      <BrowserRouter>
+        <Provider store={store}>
+          <div className='app'>
+            <Match exactly pattern='/' component={Landing} />
+          </div>
+        </Provider>
+      </BrowserRouter>
     )
   }
 }
