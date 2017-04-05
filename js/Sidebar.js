@@ -6,7 +6,7 @@ class Sidebar extends Component {
     return (
       <div className='sidebar'>
         <div className='sidebar-container container-fluid'>
-          <div role='heading' className='header'>
+          <div role='heading' className='sidebar-header'>
             Refine Search
           </div>
           <div className='filter-section'>
