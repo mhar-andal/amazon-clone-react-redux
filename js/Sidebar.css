@@ -9,4 +9,15 @@
 
 .sidebar-container{
   margin-top:20px;
+  margin-bottom: 20px;
+}
+
+.sidebar-header{
+  color: grey;
+  font-size: 30px;
+}
+
+.inner-wrapper ul{
+  list-style-type: none;
+  text-indent: none;
 }
