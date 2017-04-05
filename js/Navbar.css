@@ -28,3 +28,18 @@
 .categories {
   margin-left: -140px;
 }
+
+.glyph {
+  color: white;
+}
+
+.button {
+  margin-top: 7px;
+  margin-left: 30px;
+  background-color: #232F3E;
+}
+
+.shopping-cart {
+  color: white;
+  margin-left: 10px;
+}
