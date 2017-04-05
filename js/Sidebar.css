@@ -16,3 +16,8 @@
   color: grey;
   font-size: 30px;
 }
+
+.inner-wrapper ul{
+  list-style-type: none;
+  text-indent: none;
+}
