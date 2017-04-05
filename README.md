@@ -1,2 +1,2 @@
-## Amazon Clone
-# Using React and Redux 
+# Amazon Clone
+## Using React and Redux
