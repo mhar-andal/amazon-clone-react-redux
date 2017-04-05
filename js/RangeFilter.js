@@ -18,7 +18,7 @@ class RangeFilter extends Component {
         <div className='container-fluid'>
           <Row className='slide-wrapper'>
             <Col sm={2}>
-              ({this.props.ratingMin})
+              ( {this.props.ratingMin} )
             </Col>
             <Col sm={10}>
               <input
