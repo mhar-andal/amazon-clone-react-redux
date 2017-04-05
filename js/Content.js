@@ -16,6 +16,11 @@ class Content extends Component {
                 item.keywords.join(' ').toUpperCase().indexOf(this.props.searchTerm.toUpperCase()) >= 0
               )
             })
+            .filter((item) => {
+              return (
+                item.aggregateRating >= this.props.ratingMin
+              )
+            })
             .map((item) => {
               return (
                 <ItemCard key={item.id} item={item} />
@@ -28,14 +33,17 @@ class Content extends Component {
   }
 }
 
-const { string } = PropTypes
+const { string, number } = PropTypes
 Content.propTypes = {
-  searchTerm: string
+  searchTerm: string,
+  ratingMin: number
+
 }
 
 const mapStateToProps = (state) => {
   return {
-    searchTerm: state.searchTerm
+    searchTerm: state.searchTerm,
+    ratingMin: state.ratingMin
   }
 }
 
