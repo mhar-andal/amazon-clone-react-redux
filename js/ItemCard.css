@@ -13,19 +13,25 @@
 }
 
 .brand-name {
-  margin-top: -10px;
+  margin-top: -8px;
   font-size: 12px;
   font-weight: 700;
+  margin-left: 1px;
 }
 
 .price {
   margin-top: -5px;
-  margin-left: 60px;
+  margin-left: 85px;
   font-size: 15px;
   color: #B12704;
 }
 
 .rating {
   font-size: 15px;
-  margin-top: -25px;
+  margin-top: -27px;
+}
+
+.star {
+  width: 15px;
+  height: 15px;
 }
