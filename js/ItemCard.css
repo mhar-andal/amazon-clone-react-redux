@@ -1,11 +1,31 @@
 .item-card {
   width: 300px;
-  padding: 100px;
+  padding-left: 100px;
+  font-family: 'Source Serif Pro', serif;
 }
 .image-card {
-  width: 90%;
+  width: 80%;
 }
 
 .product-name {
-  font-size: 20px;
+  font-size: 18px;
+  color: #2F9FE1;
+}
+
+.brand-name {
+  margin-top: -10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.price {
+  margin-top: -5px;
+  margin-left: 60px;
+  font-size: 15px;
+  color: #B12704;
+}
+
+.rating {
+  font-size: 15px;
+  margin-top: -25px;
 }
