@@ -1,3 +1,6 @@
-.container {
-  display: flex
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%;
+  margin-left: 14%;
 }

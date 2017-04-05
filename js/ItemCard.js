@@ -1,14 +1,14 @@
 import React, { Component, PropTypes } from 'react'
+import './ItemCard.css'
 
 class ItemCard extends Component {
   render () {
-    const { img, brandName, brandLogo, price, aggregateRating, productName } = this.props.item
+    const { img, brandName, price, aggregateRating, productName } = this.props.item
     return (
       <div className='item-card'>
-        <img src={img} />
-        <h1>{productName}</h1>
+        <img className='image-card' src={img} />
+        <h1 className='product-name'>{productName}</h1>
         <h3>{brandName}</h3>
-        <img src={brandLogo} />
         <h3>{price}</h3>
         <h3>{aggregateRating}</h3>
       </div>
