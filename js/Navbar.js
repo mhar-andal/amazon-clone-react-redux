@@ -48,6 +48,7 @@ class NavbarHead extends Component {
           </Row>
           <Row>
             <Col className='categories' sm={12} md={12}>
+              <Category key='All' name='All' />
               {categories.sort().map((cate, index) => (
                 <Category key={cate} name={cate} />
               ))}

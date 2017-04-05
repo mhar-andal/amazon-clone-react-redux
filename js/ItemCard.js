@@ -1,16 +1,17 @@
 import React, { Component, PropTypes } from 'react'
+import Rating from './Rating'
 import './ItemCard.css'
 
 class ItemCard extends Component {
   render () {
-    const { brandName, price, aggregateRating, productName } = this.props.item
+    const { brandName, price, aggregateRating, productName, id } = this.props.item
     return (
       <div className='item-card'>
         <img className='image-card' src='http://hackathon-in-a-box.org/img/box.png' />
         <h1 className='product-name'>{productName}</h1>
         <h3 className='brand-name'>{brandName}</h3>
         <h3 className='price'>${price}</h3>
-        <h3 className='rating'>{aggregateRating}</h3>
+        <h3 className='rating'><Rating key={id} rating={aggregateRating} /></h3>
       </div>
     )
   }
@@ -26,7 +27,8 @@ ItemCard.propTypes = {
     prime: number,
     aggregateRating: number,
     productName: string,
-    keywords: array
+    keywords: array,
+    id: string
   })
 }
 
