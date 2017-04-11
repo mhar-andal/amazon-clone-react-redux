@@ -1,10 +1,8 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 import { Navbar, Grid, Row, Col, FormGroup, FormControl, Button, Glyphicon } from 'react-bootstrap'
 import { setSearchTerm } from './redux/actionCreators'
-import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import categories from './temp'
-import Category from './Category'
 import './Navbar.css'
 
 class NavbarHead extends Component {
@@ -19,6 +17,7 @@ class NavbarHead extends Component {
   handleSearchSubmit (event) {
     event.preventDefault()
     this.props.dispatch(setSearchTerm(this.state.searchTerm))
+    this.context.router.transitionTo('/')
   }
   handleSearchTermChange (event) {
     this.setState({searchTerm: event.target.value})
@@ -29,7 +28,7 @@ class NavbarHead extends Component {
         <Grid>
           <Row className='navbar-container'>
             <Col className='logo-container' sm={4} md={4}>
-              <img className='logo' src='https://raw.githubusercontent.com/mhar-andal/amazon-clone-react-redux/master/public/newprime.png' alt='logo' />
+              <Link to='/'><img className='logo' src='https://raw.githubusercontent.com/mhar-andal/amazon-clone-react-redux/master/public/newprime.png' alt='logo' /></Link>
             </Col>
             <Col className='links-container' sm={8} md={8}>
               <Navbar className='search'>
@@ -37,23 +36,15 @@ class NavbarHead extends Component {
                   <Navbar.Form pullLeft>
                     <FormGroup>
                       <form onSubmit={this.handleSearchSubmit}>
-                        <FormControl value={this.state.searchTerm} onChange={this.handleSearchTermChange} className='searchbar' type='text' placeholder='Ex. 6ft Lightning Cable' />
+                        <FormControl onChange={this.handleSearchTermChange} className='searchbar' type='text' placeholder='Ex. 6ft Lightning Cable' />
                         <Button className='searchbutton' type='submit'>Search</Button>
                       </form>
                     </FormGroup>
                     {' '}
                   </Navbar.Form>
-                  <Link to='/shopping-cart'><Button className='button'><Glyphicon className='glyph' glyph='shopping-cart' /><span className='shopping-cart'>0</span></Button></Link>
+                  <Button className='button'><Glyphicon className='glyph' glyph='shopping-cart' /><span className='shopping-cart'>0</span></Button>
                 </Navbar.Collapse>
               </Navbar>
-            </Col>
-          </Row>
-          <Row>
-            <Col className='categories' sm={12} md={12}>
-              <Category key='All' name='All' />
-              {categories.sort().map((cate, index) => (
-                <Category key={cate} name={cate} />
-              ))}
             </Col>
           </Row>
         </Grid>

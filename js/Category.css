@@ -13,7 +13,7 @@
 
 }
 
-a:hover {
+.link a:hover {
   text-decoration: none;
   color: white;
   background-color: #4FA3C3;

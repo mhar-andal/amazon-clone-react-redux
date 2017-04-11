@@ -17,7 +17,7 @@ class Category extends Component {
   }
   render () {
     return (
-      <a onClick={this.handleTabClick} className='category-link'>{this.props.name}</a>
+      <span className='link'><a onClick={this.handleTabClick} className='category-link'>{this.props.name}</a></span>
     )
   }
 }
